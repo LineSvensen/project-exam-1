@@ -6,23 +6,40 @@
     <meta name="description" content="Follow my developer journey">
     <meta name="author" content="Line Svensen">
     <meta name="keywords" content="developer, frontend, dev, blog">
-<!--    <link href="css/styles.css" rel="stylesheet">-->
+    <link href="css/styles.css" rel="stylesheet">
     <title>Home | Welcome to my dev blog!</title>
-    <script src="js/script.js" defer type="module"></script>
+    <script src="script.js" defer type="module"></script>
+    <script src="https://kit.fontawesome.com/3df22e74ab.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
-
+        <nav class="nav-links">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="checkout.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
     </header>
-    <h1>
-        Welcome!
-    </h1>
-    <div class="banner-carousel">
 
-    </div>
+    <main class="main">
+        <h1>
+            Line's dev blog
+        </h1>
+        <h2>
+            My journey as a new front-end developer
+        </h2>
 
+        <div class="banner-carousel-container">
+            <div class="carousel-content"></div>
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </div>
+        <div class="showing-posts">
+        </div>
+    </main>
 
+    <footer class="footer">
 
-
+    </footer>
 </body>
 </html>
