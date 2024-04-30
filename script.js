@@ -54,13 +54,14 @@ async function displayBannerPosts() {
         }
     }
 
-    // const readFullPostButtons = document.querySelectorAll(".read-full-post");
-    // readFullPostButtons.forEach(button => {
-    //     button.addEventListener("click", () => {
-    //         // Redirect to the full post page using the post ID from the API response
-    //         window.location.href = `post-details.html?id=${responseData.data.id}`;
-    //     });
-    // });
+    // Add event listeners to the "Read full post" buttons
+    bannerPosts.forEach(post => {
+        const readFullPostButton = post.querySelector(".read-full-post");
+        readFullPostButton.addEventListener("click", () => {
+            const postId = readFullPostButton.dataset.postId;
+            window.location.href = `post-details.html?id=${postId}`;
+        });
+    });
 
     return bannerPosts;
 }
@@ -71,24 +72,44 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const prevButton = document.querySelector(".prev");
     const nextButton = document.querySelector(".next");
+    const dotsContainer = document.querySelector(".dots-container");
+    const dots = dotsContainer.querySelectorAll(".dot");
     let currentIndex = 0;
 
     // Initially show the first post
     showPost(currentIndex);
+    updateDots(currentIndex);
 
     prevButton.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + bannerPosts.length) % bannerPosts.length;
         showPost(currentIndex);
+        updateDots(currentIndex);
     });
 
     nextButton.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % bannerPosts.length;
         showPost(currentIndex);
+        updateDots(currentIndex);
+    });
+
+    // Add event listeners to the dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            currentIndex = index;
+            showPost(currentIndex);
+            updateDots(currentIndex);
+        });
     });
 
     function showPost(index) {
         bannerPosts.forEach((post, i) => {
             post.style.display = i === index ? "block" : "none";
+        });
+    }
+
+    function updateDots(index) {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
         });
     }
 });

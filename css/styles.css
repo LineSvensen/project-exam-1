@@ -44,3 +44,23 @@
 .next {
     right: 0;
 }
+
+
+/* Styling for the dots */
+.dots-container {
+    text-align: center; /* Align the dots to the center */
+    margin-top: 10px; /* Adjust the top margin as needed */
+}
+
+.dot {
+    display: inline-block; /* Display the dots in a row */
+    width: 10px; /* Set the width of each dot */
+    height: 10px; /* Set the height of each dot */
+    margin: 0 5px; /* Adjust the margin between dots */
+    border-radius: 50%; /* Make the dots circular */
+    background-color: #bbb; /* Default color of the dots */
+}
+
+.dot.active {
+    background-color: #333; /* Color of the active dot */
+}
