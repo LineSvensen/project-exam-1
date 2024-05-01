@@ -21,6 +21,12 @@ async function displayBlogPosts() {
             <p>${post.body}</p>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
         `;
+
+        // Add click event listener to each post element
+        postElement.addEventListener('click', () => {
+            window.location.href = `./post/post-details.html?id=${post.id}`;
+        });
+
         blogPostsContainer.appendChild(postElement);
     });
 }
@@ -59,7 +65,7 @@ async function displayBannerPosts() {
         const readFullPostButton = post.querySelector(".read-full-post");
         readFullPostButton.addEventListener("click", () => {
             const postId = readFullPostButton.dataset.postId;
-            window.location.href = `post-details.html?id=${postId}`;
+            window.location.href = `./post/post-details.html?id=${postId}`;
         });
     });
 
