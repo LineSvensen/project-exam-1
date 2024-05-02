@@ -21,7 +21,8 @@ async function fetchPostDetails(postId) {
 async function displayPostDetails(post) {
     postTitleElement.textContent = post.title;
     postContentElement.innerHTML = `
-        
+        <p>Author: ${post.author.name}</p>
+        <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
         <p>${post.body}</p>
         <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
     `;
