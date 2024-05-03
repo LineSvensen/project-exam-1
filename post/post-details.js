@@ -23,6 +23,7 @@ async function displayPostDetails(post) {
     postContentElement.innerHTML = `
         <p>Author: ${post.author.name}</p>
         <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
+        <button class="share-button">Share this post</button>
         <p>${post.body}</p>
         <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
     `;
@@ -34,4 +35,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (post) {
         displayPostDetails(post);
     }
+
+    const shareButton = document.querySelector(".share-button");
+    shareButton.addEventListener("click", () => {
+        const shareUrl = `${window.location.href}?id=${postId}`;
+        navigator.clipboard.writeText(shareUrl)
+            .then(() => {
+                alert("The URL is copied :-)");
+            })
+            .catch((error) => {
+                console.error("Error copying to clipboard:", error);
+            });
+    });
 });
