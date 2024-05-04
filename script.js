@@ -1,4 +1,3 @@
-
 async function fetchBlogPosts() {
     try {
         const response = await fetch("https://v2.api.noroff.dev/blog/posts/line_svensen/");
@@ -313,4 +312,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 //             dot.classList.toggle("active", i === index);
 //         });
 //     }
+//
 // });
