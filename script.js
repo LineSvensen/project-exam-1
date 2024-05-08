@@ -31,13 +31,13 @@ async function displayBlogPosts() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    console.log("DOM loaded");
-    displayBlogPosts();
-});
 
 
-async function displayBannerPosts() {
+
+async function displayBannerPosts() {// document.addEventListener('DOMContentLoaded', async () => {
+//     console.log("DOM loaded");
+//     displayBlogPosts();
+// });
     const bannerContainer = document.querySelector(".carousel-content");
     const blogPosts = await fetchBlogPosts();
 
