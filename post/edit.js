@@ -1,0 +1,229 @@
+document.addEventListener('DOMContentLoaded', async () => {
+    const postDropdown = document.getElementById('post-dropdown');
+    const editPostForm = document.getElementById('editPostForm');
+    const deleteButton = document.getElementById('delete-btn');
+
+    try {
+        // Fetch existing posts titles and populate the dropdown
+        const postsResponse = await fetchPosts();
+        const posts = postsResponse.data; // Access the 'data' property
+        posts.forEach(post => {
+            const option = document.createElement('option');
+            option.value = post.id;
+            option.textContent = post.title;
+            postDropdown.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+    }
+
+    // Event listener for dropdown change
+    postDropdown.addEventListener('change', async () => {
+        const postId = postDropdown.value;
+        const selectedPost = await fetchPost(postId);
+
+        // Populate the form with selected post data
+        document.getElementById('title').value = selectedPost.data.title;
+        document.getElementById('body').value = selectedPost.data.body;
+        document.getElementById('image').value = selectedPost.data.media.url;
+    });
+
+    // Event listener for form submission (update post)
+    editPostForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const postId = postDropdown.value;
+        const formData = new FormData(editPostForm);
+        const updatedPost = {
+            title: formData.get('title'),
+            body: formData.get('body'),
+            image: formData.get('image')
+        };
+        await updatePost(postId, updatedPost);
+        alert('Changes saved successfully!');
+    });
+
+    // Event listener for delete button
+    deleteButton.addEventListener('click', async () => {
+        const confirmed = confirm('Are you sure you want to delete this post?');
+        if (confirmed) {
+            const postId = postDropdown.value;
+            await deletePost(postId);
+            alert('Post deleted successfully!');
+            location.reload(); // Refresh the page after deletion
+        }
+    });
+});
+
+async function fetchPosts() {
+    try {
+        const response = await fetch("https://v2.api.noroff.dev/blog/posts/line_svensen/");
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        return [];
+    }
+}
+
+async function fetchPost(postId) {
+    try {
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`);
+        const postData = await response.json();
+        return postData;
+    } catch (error) {
+        console.error('Error fetching post:', error);
+        return null;
+    }
+}
+
+async function updatePost(postId, updatedPost) {
+    try {
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGluZV9zdmVuc2VuIiwiZW1haWwiOiJsaW5zdmUwMTI4M0BzdHVkLm5vcm9mZi5ubyIsImlhdCI6MTcxNDg1MTA4N30.NLVffV1zoZymsgVcbu9S8SFsKBWXaXIF6wpq6rkiN-o"
+            },
+            body: JSON.stringify(updatedPost)
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error updating post:', error);
+        return null;
+    }
+}
+
+async function deletePost(postId) {
+    try {
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGluZV9zdmVuc2VuIiwiZW1haWwiOiJsaW5zdmUwMTI4M0BzdHVkLm5vcm9mZi5ubyIsImlhdCI6MTcxNDg1MTA4N30.NLVffV1zoZymsgVcbu9S8SFsKBWXaXIF6wpq6rkiN-o"
+            },
+
+        });
+        if (response.ok) {
+            return true;
+        } else {
+            throw new Error('Failed to delete post');
+        }
+    } catch (error) {
+        console.error('Error deleting post:', error);
+        return false;
+    }
+}
+
+// dropdown working, but not filled in with current content. not doing changes
+//
+// document.addEventListener('DOMContentLoaded', async () => {
+//     const postDropdown = document.getElementById('post-dropdown');
+//     const editPostForm = document.getElementById('editPostForm');
+//     const deleteButton = document.getElementById('delete-btn');
+//
+//     try {
+//         // Fetch existing posts titles and populate the dropdown
+//         const postsResponse = await fetchPosts();
+//         const posts = postsResponse.data; // Access the 'data' property
+//         posts.forEach(post => {
+//             const option = document.createElement('option');
+//             option.value = post.id;
+//             option.textContent = post.title;
+//             postDropdown.appendChild(option);
+//         });
+//     } catch (error) {
+//         console.error('Error fetching posts:', error);
+//     }
+//
+//     // Event listener for dropdown change
+//     postDropdown.addEventListener('change', async () => {
+//         const postId = postDropdown.value;
+//         const selectedPost = await fetchPost(postId);
+//
+//         // Populate the form with selected post data
+//         document.getElementById('title').value = selectedPost.title;
+//         document.getElementById('body').value = selectedPost.body;
+//         document.getElementById('image').value = selectedPost.image;
+//     });
+//
+//     // Event listener for form submission (update post)
+//     editPostForm.addEventListener('submit', async (e) => {
+//         e.preventDefault();
+//         const postId = postDropdown.value;
+//         const formData = new FormData(editPostForm);
+//         const updatedPost = {
+//             title: formData.get('title'),
+//             body: formData.get('body'),
+//             image: formData.get('image')
+//         };
+//         await updatePost(postId, updatedPost);
+//         alert('Changes saved successfully!');
+//     });
+//
+//     // Event listener for delete button
+//     deleteButton.addEventListener('click', async () => {
+//         const confirmed = confirm('Are you sure you want to delete this post?');
+//         if (confirmed) {
+//             const postId = postDropdown.value;
+//             await deletePost(postId);
+//             alert('Post deleted successfully!');
+//             location.reload(); // Refresh the page after deletion
+//         }
+//     });
+// });
+//
+// async function fetchPosts() {
+//     try {
+//         const response = await fetch("https://v2.api.noroff.dev/blog/posts/line_svensen/");
+//         const data = await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error('Error fetching posts:', error);
+//         return [];
+//     }
+// }
+//
+// async function fetchPost(postId) {
+//     try {
+//         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`);
+//         const postData = await response.json();
+//         return postData;
+//     } catch (error) {
+//         console.error('Error fetching post:', error);
+//         return null;
+//     }
+// }
+//
+// async function updatePost(postId, updatedPost) {
+//     try {
+//         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`, {
+//             method: 'PUT',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(updatedPost)
+//         });
+//         const data = await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error('Error updating post:', error);
+//         return null;
+//     }
+// }
+//
+// async function deletePost(postId) {
+//     try {
+//         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`, {
+//             method: 'DELETE'
+//         });
+//         if (response.ok) {
+//             return true;
+//         } else {
+//             throw new Error('Failed to delete post');
+//         }
+//     } catch (error) {
+//         console.error('Error deleting post:', error);
+//         return false;
+//     }
+// }

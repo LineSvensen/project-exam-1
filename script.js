@@ -17,6 +17,7 @@ async function displayBlogPosts() {
         const postElement = document.createElement("div");
         postElement.classList.add("blog-post");
         postElement.innerHTML = `
+            <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
             <h3>${post.title}</h3>
             <p>${post.body}</p>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
@@ -131,6 +132,7 @@ async function displayInitialPosts() {
         const postElement = document.createElement("div");
         postElement.classList.add("blog-post");
         postElement.innerHTML = `
+            <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
             <h3>${post.title}</h3>
             <p>${post.body}</p>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
@@ -157,6 +159,7 @@ async function displayAllPosts() {
         const postElement = document.createElement("div");
         postElement.classList.add("blog-post");
         postElement.innerHTML = `
+            <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
             <h3>${post.title}</h3>
             <p>${post.body}</p>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
