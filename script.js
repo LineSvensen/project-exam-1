@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log("DOM loaded");
     const bannerPosts = await displayBannerPosts();
 
-    const prevSlideButton = document.querySelector(".prevslide");
-    const nextSlideButton = document.querySelector(".nextslide");
+    const prevSlideButton = document.querySelector(".prev-slide");
+    const nextSlideButton = document.querySelector(".next-slide");
     const dotsContainer = document.querySelector(".dots-container");
     const dots = dotsContainer.querySelectorAll(".dot");
     let currentIndex = 0;
