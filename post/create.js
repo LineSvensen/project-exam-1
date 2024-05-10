@@ -1,3 +1,4 @@
+
 console.log('Access Token:', sessionStorage.getItem('accessToken'));
 
 document.addEventListener('DOMContentLoaded', () => {
