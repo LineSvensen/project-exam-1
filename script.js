@@ -136,6 +136,7 @@ async function displayInitialPosts() {
             <h3>${post.title}</h3>
             <p>${post.body}</p>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
+            <button class="read-full-post" data-post-id="${post.id}">Read full post</button>
         `;
 
         // Add click event listener to each post element
@@ -163,6 +164,7 @@ async function displayAllPosts() {
             <h3>${post.title}</h3>
             <p>${post.body}</p>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
+            <button class="read-full-post" data-post-id="${post.id}">Read full post</button>
         `;
 
         // Add click event listener to each post element
