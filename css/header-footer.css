@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    font-family: "Gothic A1", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -41,6 +41,7 @@
     text-transform: uppercase;
     transition: 0.3s;
     padding: 4px;
+    cursor: pointer;
 }
 
 .menu a:hover {
@@ -70,6 +71,7 @@
     justify-content: space-evenly;
     padding: 16px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .footer a:hover {
