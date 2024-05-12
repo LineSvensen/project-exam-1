@@ -1,0 +1,85 @@
+/*Buttons*/
+/*links*/
+/*h1 h2 h3 h4 h5
+/*banner*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --black: #2D2D2D;
+    --white: #FFFFFF;
+    --orange: #FFA66A;
+    --pink: #FF4AB3;
+    --blue: #06C4DA;
+    --green: #D6EF49;
+    --purple: #E8BDF5;
+    --darkgreen: #00883F;
+    --hover-green: #F1FFA2;
+    --hover-pink: #FF95D2;
+    --hover-blue: #81EBF8;
+    --hover-black: #959595;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+    padding: 8px;
+}
+
+p {
+    font-size: 16px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 4px 8px 4px 8px;
+    justify-items: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 0 var(--black);
+    cursor: pointer;
+    flex-wrap: nowrap;
+}
+
+button.see-more {
+    background-color: var(--pink);
+}
+
+button.see-more:hover {
+    background-color: var(--hover-pink);
+}
+
+button.read-full-post {
+    background-color: var(--green);
+}
+
+button.read-full-post:hover {
+    background-color: var(--hover-green);
+}
+
+button.share-button {
+    background-color: var(--blue);
+}
+
+button.share-button:hover {
+    background-color: var(--hover-blue);
+}
+

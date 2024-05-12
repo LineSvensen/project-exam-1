@@ -53,7 +53,7 @@ async function displayBannerPosts() {// document.addEventListener('DOMContentLoa
                 <h3>${post.title}</h3>
                 <div class="carousel-image-container">
                     <img class="banner-image" src="${post.media.url}" alt="${post.media.alt}">
-                    <button class="read-full-post" data-post-id="${post.id}">Read full post</button>
+                    <span><button class="read-full-post" data-post-id="${post.id}">Read full post</button></span>
                 </div>
             `;
             bannerContainer.appendChild(postElement);

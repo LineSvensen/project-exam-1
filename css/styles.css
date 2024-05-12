@@ -3,65 +3,120 @@
     margin: 0;
 }
 
-.banner-carousel-container {
-    width: 80%;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
 
+
+.banner-carousel-container {
+    max-width: 70%;                 /* idk maybe change in media */
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 16px;
+    /*border: 2px solid var(--black);*/
+    /*box-shadow: 4px 4px 0px 0px var(--black);    !* from https://getcssscan.com/css-box-shadow-examples *!*/
 }
 
 .carousel-content {
     display: flex;
-    overflow: hidden;
+    min-width: 100%;
+    justify-content: center;
+    overflow: visible;          /* maybe fix here. was hidden*/
+
 }
 
 .banner-post {
-    flex: 0 0 auto;
-    width: 33.33%; /* Adjust as needed */
-    padding: 10px;
-    box-sizing: border-box;
+    /*flex: 0 0 auto;*/
+    width: 100%;                          /* media */
     text-align: center;
+    border-radius: 4px;
+    /*box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    !* from https://getcssscan.com/css-box-shadow-examples *!*/
+
+}
+
+.carousel-image-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .banner-post img {
     max-width: 100%;
-    height: auto;
+    max-height: 500px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
+    cursor: pointer;
 }
+
 
 .prev,
 .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    background-color: var(--black);
     color: white;
     border: none;
     cursor: pointer;
+
+}
+
+button.prev-slide,
+button.next-slide {
+    height: 28px;
+}
+
+
+button.prev-slide:hover,
+button.next-slide:hover {
+    background-color: var(--pink);
+    color: var(--black);
+}
+
+.arrows-and-carousel-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
 
 .prev {
-    left: 0;
+
 }
 
 .next {
-    right: 0;
+
 }
 
-
-/* Styling for the dots */
 .dots-container {
-    text-align: center; /* Align the dots to the center */
-    margin-top: 10px; /* Adjust the top margin as needed */
+    text-align: center;
+    margin-top: 10px;
 }
 
 .dot {
-    display: inline-block; /* Display the dots in a row */
-    width: 10px; /* Set the width of each dot */
-    height: 10px; /* Set the height of each dot */
-    margin: 0 5px; /* Adjust the margin between dots */
-    border-radius: 50%; /* Make the dots circular */
-    background-color: #bbb; /* Default color of the dots */
+    display: inline-block;
+    width: 12px;
+    height: 12px;                       /*media larger dots 16px*/
+    margin: 0 8px;
+    border-radius: 50%;
+    background-color: var(--hover-black);
+    cursor: pointer;
+}
+
+.dot:hover {
+    background-color: var(--orange);
 }
 
 .dot.active {
-    background-color: #333; /* Color of the active dot */
+    background-color: var(--pink);
 }
