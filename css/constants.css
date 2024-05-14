@@ -7,6 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     font-family: "Poppins", sans-serif;
+    color: var(--black);
 }
 
 :root {
@@ -24,17 +25,24 @@
     --hover-black: #959595;
 }
 
+i {
+    color: var(--white);
+}
+
 h1 {
+    padding: 16px 0 16px 0;
     font-size: 32px;
 }
 
 h2 {
     font-size: 24px;
+    padding: 16px 0 16px 0;
 }
 
 h3 {
     font-size: 20px;
     padding: 8px;
+    color: var(--black);
 }
 
 p {
@@ -61,6 +69,7 @@ button {
 
 button.see-more {
     background-color: var(--pink);
+    margin: 16px 0 32px 0;
 }
 
 button.see-more:hover {
@@ -69,11 +78,28 @@ button.see-more:hover {
 
 button.read-full-post {
     background-color: var(--green);
+    margin: 12px 0 12px 0;
 }
 
 button.read-full-post:hover {
     background-color: var(--hover-green);
 }
+
+#rfp-btn {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border: none;
+    background-color: var(--white);
+    color: var(--black);
+    text-transform: none;
+    font-weight: normal;
+    margin-top: 24px;
+}
+
+#rfp-btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
 
 button.share-button {
     background-color: var(--blue);

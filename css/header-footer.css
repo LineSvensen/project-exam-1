@@ -49,9 +49,14 @@
 }
 
 .footer {
-    background-color: var(--pink);
+    background-color: var(--black);
     height: 100%;
     color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .footer p {
@@ -61,6 +66,7 @@
     justify-content: space-evenly;
     padding: 16px;
     font-size: 16px;
+    color: var(--white);
 }
 
 .footer a {
