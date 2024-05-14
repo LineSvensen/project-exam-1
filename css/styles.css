@@ -13,13 +13,57 @@ main {
 }
 
 
+
+
+
+@keyframes gradient {               /*from https://dev.to/babib/amazing-pure-html-and-css-background-animations-4dim */
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.intro-heading-banner {             /*from https://dev.to/babib/amazing-pure-html-and-css-background-animations-4dim */
+    background: linear-gradient(-45deg, var(--orange), var(--pink), var(--blue), var(--green));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+/*.intro-heading-banner img {*/
+/*    .intro-heading-banner img {*/
+/*        width: 80%;*/
+/*        height: 80%;*/
+/*    }*/
+/*}*/
+
+.h1-and-image {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
+}
+
+.h1-and-image img {
+    padding-bottom: 16px;
+}
+
 .banner-carousel-container {
     max-width: 70%;                 /* idk maybe change in media */
     box-sizing: border-box;
     border-radius: 4px;
-    padding: 16px;
-    /*border: 2px solid var(--black);*/
-    /*box-shadow: 4px 4px 0px 0px var(--black);    !* from https://getcssscan.com/css-box-shadow-examples *!*/
+    padding: 0 20px 0 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
+    margin: 0 0 20px 0;
 }
 
 .carousel-content {
@@ -27,8 +71,9 @@ main {
     min-width: 100%;
     justify-content: center;
     overflow: visible;          /* maybe fix here. was hidden*/
-
 }
+
+
 
 .banner-post {
     /*flex: 0 0 auto;*/
@@ -36,7 +81,6 @@ main {
     text-align: center;
     border-radius: 4px;
     /*box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    !* from https://getcssscan.com/css-box-shadow-examples *!*/
-
 }
 
 .carousel-image-container {
@@ -54,6 +98,7 @@ main {
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
     cursor: pointer;
+
 }
 
 
@@ -67,12 +112,12 @@ main {
     color: white;
     border: none;
     cursor: pointer;
-
 }
 
 button.prev-slide,
 button.next-slide {
     height: 28px;
+    margin: 32px;
 }
 
 
@@ -87,7 +132,7 @@ button.next-slide:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    max-height: 100%;
 }
 
 .prev {
@@ -100,14 +145,14 @@ button.next-slide:hover {
 
 .dots-container {
     text-align: center;
-    margin-top: 10px;
+    margin: 12px 0 12px 0;
 }
 
 .dot {
     display: inline-block;
     width: 12px;
     height: 12px;                       /*media larger dots 16px*/
-    margin: 0 8px;
+    margin: 0 6px;
     border-radius: 50%;
     background-color: var(--hover-black);
     cursor: pointer;
@@ -120,3 +165,114 @@ button.next-slide:hover {
 .dot.active {
     background-color: var(--pink);
 }
+
+.blog-post {
+    background-color: var(--white);
+    margin: 16px;
+    border-radius: 4px;
+    padding: 12px;
+    max-width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;                  /*media to make smaller post when bigger screen*/
+    justify-content: center;
+    max-height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+}
+
+.showing-posts {
+    max-width: 100%;                /*media to make smaller post when bigger screen*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--white);
+}
+
+.post-image {
+    max-width: 90%;                         /*media to make column max-width: 500px; */
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    padding: 16px 0 16px 0;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+/*h2 {*/
+/*    text-align: center;*/
+/*    padding: 12px 12px 12px 12px;*/
+/*}*/
+
+/*.description-heading {*/
+/*    text-align: center;*/
+/*    padding: 0 16px 16px 16px;*/
+/*    color: var(--white);*/
+/*    font-style: italic;*/
+/*}*/
+
+.title-on-post {
+    padding: 20px 0 20px 0;
+}
+
+.recent-posts-heading {
+    color: var(--pink);
+    font-size: 24px;
+    margin-top: 20px;
+    padding: 16px 0 16px 0;
+}
+
+@media (min-width: 400px) {
+    .blog-post {
+        margin: 16px;
+        padding: 12px;
+        max-width: 300px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        max-height: 100%;
+        /*white-space: nowrap;*/
+        /*overflow: hidden;*/
+        /*text-overflow: ellipsis;*/
+    }
+
+    .title-on-post h3 {
+        max-width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .showing-posts {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .post-image {
+        height: 200px;
+        width: 300px;
+        object-fit: cover;
+
+    }
+}
+
+@media (min-width: 900px) {
+    .carousel-content {
+        min-width: 0;
+    }
+}
+

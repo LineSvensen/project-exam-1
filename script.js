@@ -18,8 +18,7 @@ async function displayBlogPosts() {
         postElement.classList.add("blog-post");
         postElement.innerHTML = `
             <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
-            <h3>${post.title}</h3>
-            <p>${post.body}</p>
+            <h3 class="title-on-post">${post.title}</h3>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
         `;
 
@@ -50,7 +49,7 @@ async function displayBannerPosts() {// document.addEventListener('DOMContentLoa
             const postElement = document.createElement("div");
             postElement.classList.add("banner-post");
             postElement.innerHTML = `
-                <h3>${post.title}</h3>
+                <h3 class="title-on-post">${post.title}</h3>
                 <div class="carousel-image-container">
                     <img class="banner-image" src="${post.media.url}" alt="${post.media.alt}">
                     <span><button class="read-full-post" data-post-id="${post.id}">Read full post</button></span>
@@ -133,10 +132,9 @@ async function displayInitialPosts() {
         postElement.classList.add("blog-post");
         postElement.innerHTML = `
             <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
-            <h3>${post.title}</h3>
-            <p>${post.body}</p>
+            <h3 class="title-on-post">${post.title}</h3>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
-            <button class="read-full-post" data-post-id="${post.id}">Read full post</button>
+            <span><button class="read-full-post" id="rfp-btn" data-post-id="${post.id}">Read full post</button></span>
         `;
 
         // Add click event listener to each post element
@@ -161,10 +159,9 @@ async function displayAllPosts() {
         postElement.classList.add("blog-post");
         postElement.innerHTML = `
             <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
-            <h3>${post.title}</h3>
-            <p>${post.body}</p>
+            <h3 class="title-on-post">${post.title}</h3>
             <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
-            <button class="read-full-post" data-post-id="${post.id}">Read full post</button>
+            <span><button class="read-full-post" id="rfp-btn" data-post-id="${post.id}">Read full post</button></span>
         `;
 
         // Add click event listener to each post element
