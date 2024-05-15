@@ -1,8 +1,7 @@
-
 console.log('Access Token:', sessionStorage.getItem('accessToken'));
 
 document.addEventListener('DOMContentLoaded', () => {
-    const createPostForm = document.getElementById('createPostForm');
+    const createPostForm = document.getElementById('create-post-form');
 
     createPostForm.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -17,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGluZV9zdmVuc2VuIiwiZW1haWwiOiJsaW5zdmUwMTI4M0BzdHVkLm5vcm9mZi5ubyIsImlhdCI6MTcxNDg1MTA4N30.NLVffV1zoZymsgVcbu9S8SFsKBWXaXIF6wpq6rkiN-o", // Assuming the token is NOT stored as "accessToken"
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGluZV9zdmVuc2VuIiwiZW1haWwiOiJsaW5zdmUwMTI4M0BzdHVkLm5vcm9mZi5ubyIsImlhdCI6MTcxNDg1MTA4N30.NLVffV1zoZymsgVcbu9S8SFsKBWXaXIF6wpq6rkiN-o',
                 },
                 body: JSON.stringify({
-                    "title": title,
-                    "body": body,
-                    "media": {
-                        "url": imageUrl,
+                    'title': title,
+                    'body': body,
+                    'media': {
+                        'url': imageUrl,
                     }
                 }),
             });
@@ -31,8 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Failed to create post');
             }
-
-            // Redirect to dashboard or desired page
             window.location.href = 'admin.html';
         } catch (error) {
             console.error('Error creating post:', error);

@@ -15,7 +15,7 @@ main {
 }
 
 .links-container {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
     margin: 16px;
     border-radius: 4px;
     padding: 16px;

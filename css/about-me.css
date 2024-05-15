@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    margin: 16px 5% 16px 5%;
+}
+
+.paragraph-about-me {
+    padding: 0 0 12px 0;
+}
+
+.img-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+}
+
+.links-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.links-section i {
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--pink);
+}
+
+.links-section i:hover {
+    color: var(--hover-pink);
+}
+
+.img-me {
+    margin: 16px;
+    max-width: 90%;
+    border-radius: 4px;
+}
+
+.img-section img {
+    border-radius: 4px;
+}
+
+.footer {
+    margin-top: 16px;
+    margin-bottom: 0;
+}

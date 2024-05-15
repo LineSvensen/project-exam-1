@@ -12,17 +12,12 @@ main {
     align-items: center;
 }
 
-
-
-
-
-
 .banner-carousel-container {
-    max-width: 70%;                 /* idk maybe change in media */
+    max-width: 70%;
     box-sizing: border-box;
     border-radius: 4px;
     padding: 0 20px 0 20px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
     margin: 0 0 20px 0;
 }
 
@@ -30,17 +25,13 @@ main {
     display: flex;
     min-width: 100%;
     justify-content: center;
-    overflow: visible;          /* maybe fix here. was hidden*/
+    overflow: visible;
 }
 
-
-
 .banner-post {
-    /*flex: 0 0 auto;*/
-    width: 100%;                          /* media */
+    width: 100%;
     text-align: center;
     border-radius: 4px;
-    /*box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    !* from https://getcssscan.com/css-box-shadow-examples *!*/
 }
 
 .carousel-image-container {
@@ -56,11 +47,8 @@ main {
     max-width: 100%;
     max-height: 500px;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
-
-
+    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
 }
-
 
 .prev,
 .next {
@@ -80,7 +68,6 @@ button.next-slide {
     margin: 32px;
 }
 
-
 button.prev-slide:hover,
 button.next-slide:hover {
     background-color: var(--pink);
@@ -95,14 +82,6 @@ button.next-slide:hover {
     max-height: 100%;
 }
 
-.prev {
-
-}
-
-.next {
-
-}
-
 .dots-container {
     text-align: center;
     margin: 12px 0 12px 0;
@@ -111,7 +90,7 @@ button.next-slide:hover {
 .dot {
     display: inline-block;
     width: 12px;
-    height: 12px;                       /*media larger dots 16px*/
+    height: 12px;
     margin: 0 6px;
     border-radius: 50%;
     background-color: var(--hover-black);
@@ -119,7 +98,7 @@ button.next-slide:hover {
 }
 
 .dot:hover {
-    background-color: var(--orange);
+    background-color: var(--green);
 }
 
 .dot.active {
@@ -135,17 +114,14 @@ button.next-slide:hover {
     display: flex;
     text-align: center;
     align-items: center;
-    flex-direction: column;                  /*media to make smaller post when bigger screen*/
+    flex-direction: column;
     justify-content: center;
     max-height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
-    /*white-space: nowrap;*/
-    /*overflow: hidden;*/
-    /*text-overflow: ellipsis;*/
+    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
 }
 
 .showing-posts {
-    max-width: 100%;                /*media to make smaller post when bigger screen*/
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,9 +129,9 @@ button.next-slide:hover {
 }
 
 .post-image {
-    max-width: 90%;                         /*media to make column max-width: 500px; */
+    max-width: 90%;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
     cursor: pointer;
 }
 
@@ -166,27 +142,81 @@ h1 {
     text-transform: uppercase;
 }
 
-/*h2 {*/
-/*    text-align: center;*/
-/*    padding: 12px 12px 12px 12px;*/
-/*}*/
-
-/*.description-heading {*/
-/*    text-align: center;*/
-/*    padding: 0 16px 16px 16px;*/
-/*    color: var(--white);*/
-/*    font-style: italic;*/
-/*}*/
-
 .title-on-post {
     padding: 20px 0 20px 0;
 }
 
 .recent-posts-heading {
-    color: var(--pink);
+    color: var(--black);
     font-size: 24px;
-    margin-top: 20px;
+    margin: 16px 0 16px 0;
     padding: 16px 0 16px 0;
+}
+
+.animated-text{                         /*from https://www.darkcode.info/2023/04/typing-text-animation-using-only-html.html*/
+    color: var(--black);
+    font-size: 34px;
+    font-weight: bold;
+    margin: 20px 0 16px 0;
+    min-width: 280px;
+    background-color: var(--white);
+    border-radius: 4px;
+    border: 1px solid var(--black);
+    box-shadow: 4px 4px 0 0 var(--black);
+}
+
+.animated-text span{                    /*from https://www.darkcode.info/2023/04/typing-text-animation-using-only-html.html*/
+    position: relative;
+}
+
+.animated-text span::before{                /*from https://www.darkcode.info/2023/04/typing-text-animation-using-only-html.html*/
+    content: "Youtuber";
+    color: var(--pink);
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{             /*from https://www.darkcode.info/2023/04/typing-text-animation-using-only-html.html*/
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: var(--white);
+    border-left: 2px solid var(--pink);
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {                     /*from https://www.darkcode.info/2023/04/typing-text-animation-using-only-html.html*/
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {                      /*from https://www.darkcode.info/2023/04/typing-text-animation-using-only-html.html*/
+    0%,20%{
+        content: "I'm Line";
+    }
+    21%,40%{
+        content: "I'm a developer";
+    }
+    41%,60%{
+        content: "UX designer";
+    }
+    61%,80%{
+        content: "entrepreneur";
+    }
+    81%,100%{
+        content: "Welcome!";
+    }
+}
+
+@keyframes typing {                     /*from https://www.darkcode.info/2023/04/typing-text-animation-using-only-html.html*/
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
 }
 
 @media (min-width: 400px) {
@@ -199,9 +229,6 @@ h1 {
         align-items: center;
         justify-content: center;
         max-height: 100%;
-        /*white-space: nowrap;*/
-        /*overflow: hidden;*/
-        /*text-overflow: ellipsis;*/
     }
 
     .title-on-post h3 {
@@ -235,4 +262,3 @@ h1 {
         min-width: 0;
     }
 }
-
