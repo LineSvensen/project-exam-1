@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 20px 0 20px;
+}
+
+.links-container {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
+    margin: 16px;
+    border-radius: 4px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pages-links {
+    padding: 0;
+}
+
+.pages-links a:hover {
+    color: var(--hover-black);
+}
+
+li, a {
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+li {
+    padding: 8px;
+}
+
+.footer {
+    margin-top: 15%;
+    margin-bottom: 0;
+}
