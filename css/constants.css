@@ -25,6 +25,54 @@
     --hover-black: #959595;
 }
 
+
+
+@keyframes gradient {               /*from https://dev.to/babib/amazing-pure-html-and-css-background-animations-4dim */
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.intro-heading-banner {             /*from https://dev.to/babib/amazing-pure-html-and-css-background-animations-4dim */
+    background: linear-gradient(-45deg, var(--orange), var(--pink), var(--blue), var(--green));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+/*.intro-heading-banner img {*/
+/*    .intro-heading-banner img {*/
+/*        width: 80%;*/
+/*        height: 80%;*/
+/*    }*/
+/*}*/
+
+.h1-and-image {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
+}
+
+.h1-and-image img {
+    padding-bottom: 16px;
+}
+
+h1, h2, h3, p {
+    text-align: center;
+}
+
 i {
     color: var(--white);
 }
@@ -98,14 +146,5 @@ button.read-full-post:hover {
 #rfp-btn:hover {
     background-color: var(--black);
     color: var(--white);
-}
-
-
-button.share-button {
-    background-color: var(--blue);
-}
-
-button.share-button:hover {
-    background-color: var(--hover-blue);
 }
 
