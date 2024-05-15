@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
+    const loginForm = document.getElementById('login-form');
 
     loginForm.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -27,10 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             const token = data.token;
 
-            // Save token to session storage
             sessionStorage.setItem('token', token);
 
-            // Redirect to dashboard or desired page
             window.location.href = '../post/admin.html';
         } catch (error) {
             console.error('Login error:', error);

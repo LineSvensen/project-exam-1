@@ -1,11 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
-const postId = urlParams.get("id");
+const postId = urlParams.get('id');
 console.log(postId);
-const postDetailsContainer = document.querySelector(".post-details");
-const postTitleElement = postDetailsContainer.querySelector(".post-title");
-const postContentElement = postDetailsContainer.querySelector(".post-content");
-
-
+const postDetailsContainer = document.querySelector('.post-details');
+const postTitleElement = postDetailsContainer.querySelector('.post-title');
+const postContentElement = postDetailsContainer.querySelector('.post-content');
 
 async function fetchPostDetails(postId) {
     try {
@@ -32,21 +30,21 @@ async function displayPostDetails(post) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log("post-details.js loaded");
+    console.log('post-details.js loaded');
     const post = await fetchPostDetails(postId);
     if (post) {
         displayPostDetails(post);
     }
 
-    const shareButton = document.querySelector(".share-button");
-    shareButton.addEventListener("click", () => {
+    const shareButton = document.querySelector('.share-button');
+    shareButton.addEventListener('click', () => {
         const shareUrl = `${window.location.href}?id=${postId}`;
         navigator.clipboard.writeText(shareUrl)
             .then(() => {
-                alert("The URL is copied :-)");
+                alert('The URL is copied :-)');
             })
             .catch((error) => {
-                console.error("Error copying to clipboard:", error);
+                console.error('Error copying to clipboard:', error);
             });
     });
 });

@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const registerForm = document.getElementById('registerForm');
+    const registerForm = document.getElementById('register-form');
 
     registerForm.addEventListener('submit', async function(event) {
         event.preventDefault();
 
-        const name = document.getElementById('name').value; // Add the name field if you want to include it in the registration
+        const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
-        const venueManager = false; // Set to true if you want to include it in the registration
+        const venueManager = false;
 
         const requestBody = {
             name,
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (response.ok) {
                 alert('User registered successfully!');
-                // Redirect or perform other actions upon successful registration
+
             } else {
                 const data = await response.json();
                 if (data && data.message) {
