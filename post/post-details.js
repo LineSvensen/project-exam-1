@@ -21,9 +21,11 @@ async function fetchPostDetails(postId) {
 async function displayPostDetails(post) {
     postTitleElement.textContent = post.title;
     postContentElement.innerHTML = `
-        <p>Author: ${post.author.name}</p>
-        <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
-        <button class="share-button">Share this post</button>
+        <div class="created-author-share-section">
+            <p>Author: ${post.author.name}</p>
+            <p>Created: ${new Date(post.created).toLocaleDateString()}</p>
+            <span><button class="share-button"><i class="fa-solid fa-share-nodes"></i></button></span>
+        </div>
         <p>${post.body}</p>
         <img class="post-image" src="${post.media.url}" alt="${post.media.alt}">
     `;
