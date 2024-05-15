@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 20px 0 20px;
+}
+
+.footer {
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+#post-dropdown {
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.btn-section {
+    display: flex;
+    flex-direction: row;
+}

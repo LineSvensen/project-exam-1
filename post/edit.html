@@ -15,93 +15,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo-candy.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/logo-candy.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/logo-candy.png"/>
 </head>
 <body>
     <header class="header">
         <nav class="nav-links">
             <ul class="menu">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html">Log out</a></li>
                 <li><a href="admin.html">Back to admin menu</a></li>
             </ul>
         </nav>
     </header>
     <main class="main">
         <h1>Edit Blog Post</h1>
-        <!-- Dropdown to choose between existing posts -->
-        <select id="post-dropdown">
-            <option value="" disabled selected>Select a post to edit</option>
-        </select>
-
-        <form id="editPostForm">
-            <div>
+        <form id="edit-post-form">
+            <label for="post-dropdown">Existing post:</label>
+            <select id="post-dropdown">
+                <option value="" disabled selected>Select a post to edit</option>
+            </select>
+            <div class="section-in-form">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title" required>
             </div>
-            <div>
+            <div class="section-in-form">
                 <label for="body">Body:</label>
                 <textarea id="body" name="body" rows="8" required></textarea>
             </div>
-            <div>
+            <div class="section-in-form">
                 <label for="image">Image URL:</label>
                 <input type="url" id="image" name="image" required>
             </div>
-            <button type="submit">Save changes</button>
-            <button type="button" id="delete-btn">Delete Post</button>
+            <div class="btn-section">
+                <button class="submit-btn" type="submit">Save changes</button>
+                <button class="delete-btn" type="button" id="delete-btn">Delete Post</button>
+            </div>
         </form>
     </main>
     <footer class="footer">
-
+        <p>Copyright ©</p>
+        <p>This website was developed by Line Svensen</p>
+        <a href="https://www.linkedin.com/in/line-svensen-967131122/"><i class="fa-brands fa-linkedin-in"></i></a>
     </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <meta name="description" content="Here you can edit">-->
-<!--    <meta name="author" content="Line Svensen">-->
-<!--    <meta name="keywords" content="developer, frontend, dev, blog">-->
-<!--    <link href="../css/edit.css" rel="stylesheet">-->
-<!--    <title>Edit posts | Line's dev blog</title>-->
-<!--    <script src="edit.js" defer type="module"></script>-->
-<!--    <script src="https://kit.fontawesome.com/3df22e74ab.js" crossorigin="anonymous"></script>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <main class="main">-->
-<!--        <h1>Edit Blog Post</h1>-->
-<!--        &lt;!&ndash; Dropdown to choose between existing posts &ndash;&gt;-->
-<!--        <select id="post-dropdown">-->
-<!--            <option value="" disabled selected>Select a post to edit</option>-->
-<!--        </select>-->
-
-<!--        <form id="editPostForm">-->
-<!--            <div>-->
-<!--                <label for="title">Title:</label>-->
-<!--                <input type="text" id="title" name="title" required>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <label for="body">Body:</label>-->
-<!--                <textarea id="body" name="body" rows="8" required></textarea>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <label for="image">Image URL:</label>-->
-<!--                <input type="url" id="image" name="image" required>-->
-<!--            </div>-->
-<!--            <button type="submit">Save changes</button>-->
-<!--            <button type="button" id="delete-btn">Delete Post</button>-->
-<!--        </form>-->
-<!--    </main>-->
-<!--</body>-->
-<!--</html>-->

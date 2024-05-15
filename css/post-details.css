@@ -31,9 +31,8 @@ p {
 
 .post-image {
     max-width: 80%;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
     margin: 16px 0 16px 0;
-
 }
 
 .created-author-share-section {
@@ -53,9 +52,3 @@ button.share-button {
 button.share-button:hover {
     background-color: var(--hover-blue);
 }
-
-/*@media (min-width: 500px) {*/
-/*    button.share-button {*/
-/*        margin-left: 200px;*/
-/*    }*/
-/*}*/
