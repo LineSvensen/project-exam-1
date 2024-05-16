@@ -1,3 +1,5 @@
+const loading = document.querySelector('.loader');
+const loadingBox = document.querySelector('.loader-container');
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('id');
 console.log(postId);
@@ -7,12 +9,17 @@ const postContentElement = postDetailsContainer.querySelector('.post-content');
 
 async function fetchPostDetails(postId) {
     try {
+        loading.style.display = 'flex';
+        loadingBox.style.display = 'flex';
         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`);
         const responseData = await response.json();
         return responseData.data;
     } catch (error) {
         console.error('Error fetching post details:', error);
         return null;
+    } finally {
+        loading.style.display = 'none';
+        loadingBox.style.display = 'none';
     }
 }
 

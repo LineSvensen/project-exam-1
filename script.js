@@ -1,5 +1,11 @@
+const loading = document.querySelector('.loader');
+const loadingBox = document.querySelector('.loader-container');
+
 async function fetchBlogPosts() {
     try {
+        loading.style.display = 'flex';
+        loadingBox.style.display = 'flex';
+
         const response = await fetch('https://v2.api.noroff.dev/blog/posts/line_svensen/');
         const responseData = await response.json();
         return responseData.data;
@@ -11,7 +17,11 @@ async function fetchBlogPosts() {
 
 async function displayBlogPosts() {
     const blogPostsContainer = document.querySelector(".showing-posts");
+    loading.style.display = 'flex';
+    loadingBox.style.display = 'flex';
     const blogPosts = await fetchBlogPosts();
+    loading.style.display = 'none';
+    loadingBox.style.display = 'none';
 
     blogPosts.forEach(post => {
         const postElement = document.createElement('div');
@@ -31,9 +41,12 @@ async function displayBlogPosts() {
 }
 
 async function displayBannerPosts() {
-
     const bannerContainer = document.querySelector(".carousel-content");
+    loading.style.display = 'flex';
+    loadingBox.style.display = 'flex';
     const blogPosts = await fetchBlogPosts();
+    loading.style.display = 'none';
+    loadingBox.style.display = 'none';
 
     const bannerPosts = [];
     for (let i = 0; i < 3 && i < blogPosts.length; i++) {
@@ -112,7 +125,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function displayInitialPosts() {
     const blogPostsContainer = document.querySelector('.showing-posts');
+    loading.style.display = 'flex';
+    loadingBox.style.display = 'flex';
     const blogPosts = await fetchBlogPosts();
+    loading.style.display = 'none';
+    loadingBox.style.display = 'none';
 
     const visiblePosts = blogPosts.slice(0, 12);
 
@@ -138,7 +155,11 @@ async function displayInitialPosts() {
 
 async function displayAllPosts() {
     const blogPostsContainer = document.querySelector('.showing-posts');
+    loading.style.display = 'flex';
+    loadingBox.style.display = 'flex';
     const blogPosts = await fetchBlogPosts();
+    loading.style.display = 'none';
+    loadingBox.style.display = 'none';
 
     blogPostsContainer.innerHTML = '';
 
