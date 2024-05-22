@@ -57,7 +57,7 @@ main {
     transform: translateY(-50%);
     padding: 8px;
     background-color: var(--black);
-    color: white;
+    color: var(--white);
     border: none;
     cursor: pointer;
 }
@@ -155,7 +155,7 @@ h1 {
 
 .animated-text{                         /*from https://www.darkcode.info/2023/04/typing-text-animation-using-only-html.html*/
     color: var(--black);
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     margin: 20px 0 16px 0;
     min-width: 280px;
