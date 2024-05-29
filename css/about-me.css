@@ -38,12 +38,17 @@ main {
 .links-section i {
     list-style-type: none;
     text-decoration: none;
-    font-size: 24px;
-    color: var(--pink);
+    font-size: 20px;
+    background-color: var(--pink);
+    color: var(--white);
+    border: 1px solid var(--black);
+    box-shadow: 4px 4px 0 0 var(--black);
+    border-radius: 4px;
+    padding: 8px;
 }
 
 .links-section i:hover {
-    color: var(--hover-pink);
+    background-color: var(--hover-pink);
 }
 
 .img-me {
