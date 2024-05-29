@@ -52,3 +52,17 @@ button.share-button {
 button.share-button:hover {
     background-color: var(--hover-blue);
 }
+
+@media (min-width: 500px) {
+    .created-author-share-section {
+        justify-content: center;
+    }
+    .share-button {
+        margin: 0 0 12px 20px;
+    }
+    h1 {
+        padding: 0;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
