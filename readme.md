@@ -87,7 +87,10 @@ Homepage/index page styling:
 
     styles.css
 
-### <ins>Post:</ins> 
+### <ins>Post</ins>
+
+All pages regarding posting administration:
+
     - admin.html
     - create.html
     - create.js
