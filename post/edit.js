@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const updatedPost = {
             title: formData.get('title'),
             body: formData.get('body'),
-            image: formData.get('image')
+            media: {
+                url: formData.get('image')
+            }
         };
         await updatePost(postId, updatedPost);
         alert('Changes saved successfully!');
@@ -72,12 +74,13 @@ async function fetchPost(postId) {
 }
 
 async function updatePost(postId, updatedPost) {
+    const token = sessionStorage.getItem('token');
     try {
         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGluZV9zdmVuc2VuIiwiZW1haWwiOiJsaW5zdmUwMTI4M0BzdHVkLm5vcm9mZi5ubyIsImlhdCI6MTcxNDg1MTA4N30.NLVffV1zoZymsgVcbu9S8SFsKBWXaXIF6wpq6rkiN-o'
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(updatedPost)
         });
@@ -90,12 +93,13 @@ async function updatePost(postId, updatedPost) {
 }
 
 async function deletePost(postId) {
+    const token = sessionStorage.getItem('token');
     try {
         const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGluZV9zdmVuc2VuIiwiZW1haWwiOiJsaW5zdmUwMTI4M0BzdHVkLm5vcm9mZi5ubyIsImlhdCI6MTcxNDg1MTA4N30.NLVffV1zoZymsgVcbu9S8SFsKBWXaXIF6wpq6rkiN-o'
+                'Authorization': `Bearer ${token}`
             },
         });
         if (response.ok) {

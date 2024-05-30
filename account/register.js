@@ -17,11 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         try {
+            const token = sessionStorage.getItem('token');
             const response = await fetch('https://v2.api.noroff.dev/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGluZV9zdmVuc2VuIiwiZW1haWwiOiJsaW5zdmUwMTI4M0BzdHVkLm5vcm9mZi5ubyIsImlhdCI6MTcxNDg1MTA4N30.NLVffV1zoZymsgVcbu9S8SFsKBWXaXIF6wpq6rkiN-o'
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify(requestBody)
             });

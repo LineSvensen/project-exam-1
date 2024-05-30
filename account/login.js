@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
-            const token = data.token;
 
+            const token = data.data.accessToken;
             sessionStorage.setItem('token', token);
 
             window.location.href = '../post/admin.html';
