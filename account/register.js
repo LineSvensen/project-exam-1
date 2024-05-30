@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         } catch (error) {
-            console.error('Error registering user:', error);
             alert('An error occurred while registering the user. Please try again later.');
         }
     });

@@ -2,7 +2,6 @@ const loading = document.querySelector('.loader');
 const loadingBox = document.querySelector('.loader-container');
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('id');
-console.log(postId);
 const postDetailsContainer = document.querySelector('.post-details');
 const postTitleElement = postDetailsContainer.querySelector('.post-title');
 const postContentElement = postDetailsContainer.querySelector('.post-content');
@@ -15,7 +14,6 @@ async function fetchPostDetails(postId) {
         const responseData = await response.json();
         return responseData.data;
     } catch (error) {
-        console.error('Error fetching post details:', error);
         return null;
     } finally {
         loading.style.display = 'none';
@@ -37,7 +35,6 @@ async function displayPostDetails(post) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('post-details.js loaded');
     const post = await fetchPostDetails(postId);
     if (post) {
         displayPostDetails(post);
@@ -51,7 +48,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 alert('The URL is copied :-)');
             })
             .catch((error) => {
-                console.error('Error copying to clipboard:', error);
             });
     });
 });

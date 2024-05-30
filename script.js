@@ -10,7 +10,6 @@ async function fetchBlogPosts() {
         const responseData = await response.json();
         return responseData.data;
     } catch (error) {
-        console.error('Error fetching blog posts:', error);
         return [];
     }
 }
@@ -78,7 +77,6 @@ async function displayBannerPosts() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('DOM loaded');
     const bannerPosts = await displayBannerPosts();
 
     const prevSlideButton = document.querySelector('.prev-slide');
@@ -182,7 +180,6 @@ async function displayAllPosts() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('DOM loaded');
     const blogPosts = await displayInitialPosts();
 
     const seeMoreButton = document.getElementById('see-more-button');

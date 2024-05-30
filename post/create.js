@@ -1,5 +1,3 @@
-console.log('Access Token:', sessionStorage.getItem('accessToken'));
-
 document.addEventListener('DOMContentLoaded', () => {
     const createPostForm = document.getElementById('create-post-form');
 
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             window.location.href = 'admin.html';
         } catch (error) {
-            console.error('Error creating post:', error);
             alert('Failed to create post. Please try again.');
         }
     });

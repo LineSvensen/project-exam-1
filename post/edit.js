@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             postDropdown.appendChild(option);
         });
     } catch (error) {
-        console.error('Error fetching posts:', error);
+
     }
 
     postDropdown.addEventListener('change', async () => {
@@ -57,7 +57,6 @@ async function fetchPosts() {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Error fetching posts:', error);
         return [];
     }
 }
@@ -68,7 +67,6 @@ async function fetchPost(postId) {
         const postData = await response.json();
         return postData;
     } catch (error) {
-        console.error('Error fetching post:', error);
         return null;
     }
 }
@@ -87,7 +85,6 @@ async function updatePost(postId, updatedPost) {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Error updating post:', error);
         return null;
     }
 }
@@ -108,7 +105,6 @@ async function deletePost(postId) {
             throw new Error('Failed to delete post');
         }
     } catch (error) {
-        console.error('Error deleting post:', error);
         return false;
     }
 }

@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             window.location.href = '../post/admin.html';
         } catch (error) {
-            console.error('Login error:', error);
             alert('Login failed. Please try again.');
         }
     });
