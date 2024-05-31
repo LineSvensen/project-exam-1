@@ -13,9 +13,10 @@ In this project, we were assigned to create a blog for a client (company) where 
         Location: Worldwide
         Mission: Line wants to share her journey and skills as a junior Front-end developer student to attract future employer(s) and customers.
 
-![view-1.png](assets%2Fview-1.png)
-
-![view-4.png](assets%2Fview-4.png)
+<img alt="view-1.png" height="400" src="assets/view-1.png"/>
+<br>
+<br>
+<img alt="view-4.png" height="400" src="assets/view-4.png"/>
 
 ## Programs used 🛠️
 - Webstorm (HTML, CSS)
@@ -26,78 +27,51 @@ In this project, we were assigned to create a blog for a client (company) where 
 ## Project structure/directories 📂
 ### <ins>Root directory</ins>
 
-Homepage:
+<b>Homepage:</b>
 
-    - index.html
-    - script.js
+- index.html
+- script.js
 
-About page:
+<b>About page:</b>
 
-    about-me.html
+- about-me.html
 
 ### <ins>Account</ins>
 
-Login page:
+<b>Login page:</b>
 
-    - login.html
-    - login.js
+- login.html
+- login.js
     
-Register page:
+<b>Register page:</b>
 
-    - register.html
-    - register.js
-
-### <ins>Assets</ins>
-    all images and logos
-
-### <ins>CSS</ins>
-About page styling:
-
-    about-me.css
-    
-Admin page styling:
-
-    admin.css
-    
-Root styling for design elements that are consistent across all pages:
-    
-    constants.css
-    
-Create page styling:
-
-    create.css
-    
-Edit page styling:
-
-    edit.css
-    
-Header and footer styling consistent across all pages:
-
-    header-footer.css
-    
-Login and register pages styling:
-
-    login-register.css
-    
-Post details page styling:
-
-    post-details.css
-    
-Homepage/index page styling:
-
-    styles.css
+- register.html
+- register.js
 
 ### <ins>Post</ins>
-
 All pages regarding posting administration:
 
-    - admin.html
-    - create.html
-    - create.js
-    - edit.html
-    - edit.js
-    - post-details.html
-    - post-details.js
+- admin.html
+- create.html
+- create.js
+- edit.html
+- edit.js
+- post-details.html
+- post-details.js
+
+### <ins>Assets</ins>
+- All images and logos
+
+### <ins>CSS</ins>
+- constants.css: Root styling for design elements that are consistent across all pages
+- header-footer.css: Header and footer styling consistent across all pages
+- styles.css: Homepage/index page styling
+- post-details.css: Post details page styling
+- create.css: Create page styling
+- edit.css: Edit page styling
+- login-register.css: Login and register pages styling with elements that are consistent on both pages
+- admin.css: Admin page styling
+- about-me.css: About page styling
 
 ## Features 🌟
 
@@ -149,17 +123,45 @@ The blog runs smooth on all devices over 360px.
 - Requires name, email and password
 - Alert will show if not successful 
 
-### About page:
+#### About page:
 - About page for client/company. History and contact info
 
 ## How to install 🔧
 
-If you want to contribute to this project or just view locally you will need to download for example Webstorm or VS code.
+If you want to contribute to this project or just view locally, here are the steps to get the project running on your local machine:
 
-Clone the repository:
-git clone https://github.com/linesvensen/project-exam-1.git
-cd project-exam-1
-Run index.html in your browser to view the blog
+1. You will need to have installed a program like Webstorm or VS code.
+<br></br>
+2. You will then have to write the below in a terminal.
+   <br></br>
+3. Clone the repository:
+
+        git clone https://github.com/LineSvensen/project-exam-1.git
+
+4. Navigate into the project directory:
+
+       cd project-exam-1
+
+5. Install the dependencies:
+
+        npm install
+
+6. Start the application:
+
+        npm run start
+
+7. In your terminal at the end it should look like this:
+
+        git clone https://github.com/LineSvensen/project-exam-1.git
+        cd project-exam-1
+        npm install
+        npm run start
+
+## Contact:
+
+### [My Linkedin](https://www.linkedin.com/in/line-svensen-967131122/)
+
+### [My Github profile](https://github.com/LineSvensen)
 
 ## Reflection note:
 
@@ -171,4 +173,4 @@ The design is reflecting the client's brand: creative, playful, tech and modern.
 
 Feel free to contact me if you have questions or are interested in my work 😃
 
-BR, Line
+### BR, Line
