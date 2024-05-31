@@ -4,6 +4,8 @@
 
 ### Click here to view the blog: https://project-exam-1.vercel.app/
 
+![readme-view.png](assets%2Freadme-view.png)
+
 In this project, we were assigned to create a blog for a client (company) where the owner (blog author) can create, edit and delete post - but also register new accounts. Users/visitors of the blog would be able to see homepage and full post, but not able to access admin pages (create, edit, delete, register). 
 
         Client/company: LS DEV ENK
@@ -12,11 +14,6 @@ In this project, we were assigned to create a blog for a client (company) where 
         Size: None employees, only Line Svensen
         Location: Worldwide
         Mission: Line wants to share her journey and skills as a junior Front-end developer student to attract future employer(s) and customers.
-
-<img alt="view-1.png" height="400" src="assets/view-1.png"/>
-<br>
-<br>
-<img alt="view-4.png" height="400" src="assets/view-4.png"/>
 
 ## Programs used 🛠️
 - Webstorm (HTML, CSS)
