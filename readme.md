@@ -4,7 +4,7 @@
 
 ### Click here to view the blog: https://project-exam-1.vercel.app/
 
-![readme-view.png](assets%2Freadme-view-2.png)
+![readme-view-gif.gif](assets%2Freadme-view-gif.gif)
 
 In this project, we were assigned to create a blog for a client (company) where the owner (blog author) can create, edit and delete post - but also register new accounts. Users/visitors of the blog would be able to see homepage and full post, but not able to access admin pages (create, edit, delete, register). 
 
