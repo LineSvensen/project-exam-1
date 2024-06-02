@@ -16,7 +16,8 @@ In this project, we were assigned to create a blog for a client (company) where 
         Mission: Line wants to share her journey and skills as a junior Front-end developer student to attract future employer(s) and customers.
 
 ## Programs used 🛠️
-- Webstorm (HTML, CSS)
+- Webstorm (HTML, CSS, JavaScript)
+- Figma (check out the design [here](https://www.figma.com/design/4mWXvY7MUcaXcorUtNe8Xc/Project-exam-1?node-id=3-4&t=6JFfJYGhYpEjRbaM-1))
 - Sourcetree (push project to Github)
 - Noroff API
 - Vercel (deploy webpage)
