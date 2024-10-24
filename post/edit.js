@@ -1,6 +1,6 @@
 async function fetchPosts() {
     try {
-        const response = await fetch('https://v2.api.noroff.dev/blog/posts/line_svensen/');
+        const response = await fetch('https://v2.api.noroff.dev/blog/posts/linesven/');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -10,7 +10,7 @@ async function fetchPosts() {
 
 async function fetchPost(postId) {
     try {
-        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`);
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/linesven/${postId}`);
         const postData = await response.json();
         return postData;
     } catch (error) {
@@ -21,11 +21,12 @@ async function fetchPost(postId) {
 async function updatePost(postId, updatedPost) {
     const token = sessionStorage.getItem('token');
     try {
-        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`, {
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/linesven/${postId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'X-Noroff-API-Key': '6e9bfd26-05dc-4cf2-b1e2-d1a6ff3fc7c9'
             },
             body: JSON.stringify(updatedPost)
         });
@@ -39,11 +40,12 @@ async function updatePost(postId, updatedPost) {
 async function deletePost(postId) {
     const token = sessionStorage.getItem('token');
     try {
-        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`, {
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/linesven/${postId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'X-Noroff-API-Key': '6e9bfd26-05dc-4cf2-b1e2-d1a6ff3fc7c9'
             },
         });
         if (response.ok) {

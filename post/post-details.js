@@ -10,7 +10,7 @@ async function fetchPostDetails(postId) {
     try {
         loading.style.display = 'flex';
         loadingBox.style.display = 'flex';
-        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/line_svensen/${postId}`);
+        const response = await fetch(`https://v2.api.noroff.dev/blog/posts/linesven/${postId}`);
         const responseData = await response.json();
         return responseData.data;
     } catch (error) {

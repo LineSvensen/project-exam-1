@@ -11,11 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const token = sessionStorage.getItem('token');
-            const response = await fetch('https://v2.api.noroff.dev/blog/posts/line_svensen', {
+            const response = await fetch('https://v2.api.noroff.dev/blog/posts/linesven', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'X-Noroff-API-Key': '6e9bfd26-05dc-4cf2-b1e2-d1a6ff3fc7c9'
                 },
                 body: JSON.stringify({
                     'title': title,
