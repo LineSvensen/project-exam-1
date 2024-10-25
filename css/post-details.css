@@ -29,6 +29,18 @@ p {
     padding: 16px 24px 16px 24px;
 }
 
+.post-content p {
+    max-width: 1000px;
+}
+
+.post-content {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
 .post-image {
     max-width: 80%;
     box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;    /* from https://getcssscan.com/css-box-shadow-examples */
@@ -38,14 +50,13 @@ p {
 .created-author-share-section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     text-align: center;
     align-items: center;
 }
 
 button.share-button {
     background-color: var(--blue);
-    padding: 8px;
+    padding: 4px;
     margin-right: 20px;
 }
 
