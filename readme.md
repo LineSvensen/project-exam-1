@@ -2,7 +2,7 @@
 
 ### Welcome to this repo where it holds the code for the blog LS DEV (Line Svensen Developer) where the client/owner are able to log in, register new user and create/edit/delete blog posts. This project is a part of my Front-end development education at Noroff School of Technology and Digital Media. 
 
-### Click here to view the blog: https://project-exam-1.vercel.app/
+### Click here to view the blog: https://lsdevblog.vercel.app
 
 ![readme-view-gif.gif](assets%2Freadme-view-gif.gif)
 
